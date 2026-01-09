@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD Chess Server</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pre-container">
+      <pre class="default">
+  /$$$$$$  /$$                                           /$$$$$$                                                   
+ /$$__  $$| $$                                          /$$__  $$                                                  
+| $$  \__/| $$$$$$$   /$$$$$$   /$$$$$$$ /$$$$$$$      | $$  \__/  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$ 
+| $$      | $$__  $$ /$$__  $$ /$$_____//$$_____/      |  $$$$$$  /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$__  $$
+| $$      | $$  \ $$| $$$$$$$$|  $$$$$$|  $$$$$$        \____  $$| $$$$$$$$| $$  \__/ \  $$/$$/| $$$$$$$$| $$  \__/
+| $$    $$| $$  | $$| $$_____/ \____  $$\____  $$       /$$  \ $$| $$_____/| $$        \  $$$/ | $$_____/| $$      
+|  $$$$$$/| $$  | $$|  $$$$$$$ /$$$$$$$//$$$$$$$/      |  $$$$$$/|  $$$$$$$| $$         \  $/  |  $$$$$$$| $$      
+ \______/ |__/  |__/ \_______/|_______/|_______/        \______/  \_______/|__/          \_/    \_______/|__/      
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+    </pre
+      >
+
+      <pre class="hover">
+ $$$$$$\  $$\                                            $$$$$$\                                                    
+$$  __$$\ $$ |                                          $$  __$$\                                                   
+$$ /  \__|$$$$$$$\   $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  \__| $$$$$$\   $$$$$$\ $$\    $$\  $$$$$$\   $$$$$$\  
+$$ |      $$  __$$\ $$  __$$\ $$  _____|$$  _____|      \$$$$$$\  $$  __$$\ $$  __$$\\$$\  $$  |$$  __$$\ $$  __$$\ 
+$$ |      $$ |  $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\         \____$$\ $$$$$$$$ |$$ |  \__|\$$\$$  / $$$$$$$$ |$$ |  \__|
+$$ |  $$\ $$ |  $$ |$$   ____| \____$$\  \____$$\       $$\   $$ |$$   ____|$$ |       \$$$  /  $$   ____|$$ |      
+\$$$$$$  |$$ |  $$ |\$$$$$$$\ $$$$$$$  |$$$$$$$  |      \$$$$$$  |\$$$$$$$\ $$ |        \$  /   \$$$$$$$\ $$ |      
+ \______/ \__|  \__| \_______|\_______/ \_______/        \______/  \_______|\__|         \_/     \_______|\__|      
+                                                                                                                    
+                                                                                                                    
+                                                                                                                    
+    </pre
+      >
+    </div>
+
+    <h2>Add a player</h2>
+    <form action="http://localhost:3000/add" method="get" autocomplete="off">
+      <div class="ligne">
+        Username: <input name="username" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        Password: <input name="password" type="password" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        Nationnality: <input name="nationality" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        Elo: <input name="elo" type="number" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        Age: <input name="age" type="number" placeholder="Type here..." />
+      </div>
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>Get player ID</h2>
+    <form
+      action="http://localhost:3000/getByUsername"
+      method="get"
+      autocomplete="off"
+    >
+      <div class="ligne">
+        Username: <input name="username" placeholder="Type here..." />
+      </div>
+      <button type="submit">Get ID</button>
+    </form>
+
+    <h2>Search player by ID</h2>
+    <form
+      action="http://localhost:3000/searchById"
+      method="get"
+      autocomplete="off"
+    >
+      <div class="ligne">
+        ID: <input name="id" placeholder="Type here..." />
+      </div>
+      <button type="submit">Search</button>
+    </form>
+
+    <h2>Search player by username</h2>
+    <form
+      action="http://localhost:3000/searchByUsername"
+      method="get"
+      autocomplete="off"
+    >
+      <div class="ligne">
+        Username: <input name="username" placeholder="Type here..." />
+      </div>
+      <button type="submit">Search</button>
+    </form>
+
+    <h2>Update a player</h2>
+    <form action="http://localhost:3000/update" method="get" autocomplete="off">
+      <div class="ligne">
+        ID: <input name="id" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        New username: <input name="username" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        New password: <input name="password" type="password" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        New nationality: <input name="nationality" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        New elo: <input name="elo" type="number" placeholder="Type here..." />
+      </div>
+      <div class="ligne">
+        New age: <input name="age" type="number" placeholder="Type here..." />
+      </div>
+      <button type="submit">Update</button>
+    </form>
+
+    <h2>Delete a player by username</h2>
+    <form
+      action="http://localhost:3000/deleteByUsername"
+      method="get"
+      autocomplete="off"
+    >
+      <div class="ligne">
+        Username: <input name="username" placeholder="Type here..." />
+      </div>
+      <button type="submit">Delete</button>
+    </form>
+
+    <h2>Delete a player by ID</h2>
+    <form action="http://localhost:3000/delete" method="get" autocomplete="off">
+      <div class="ligne">
+        Player's ID: <input name="id" placeholder="Type here..." />
+      </div>
+      <button type="submit">Delete</button>
+    </form>
+
+    <h2>List of players</h2>
+    <form action="http://localhost:3000/list" method="get" autocomplete="off">
+      <button type="submit">Show all players</button>
+    </form>
+  </body>
+</html>
